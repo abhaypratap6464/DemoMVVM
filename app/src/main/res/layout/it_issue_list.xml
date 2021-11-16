@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.android.example.demomvvm.ui.IssueDataItem" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/issueCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_medium">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_normal">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivAvatar"
+                avatarImage="@{item.avatarUrl}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/ic_avatar_description"
+                app:layout_constraintBottom_toTopOf="@+id/tvIssueUserName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_profile" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvIssueTitle"
+                style="@style/TextViewHeaderStyle"
+                android:layout_width="@dimen/zero_dimen"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@{item.title}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivAvatar"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="3.12.12 BOM references invalid okhttp-logging-interceptor coordinate" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvIssueDescription"
+                style="@style/TextViewDescriptionStyle"
+                android:layout_width="@dimen/zero_dimen"
+                android:layout_height="wrap_content"
+                android:text="@{item.description}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivAvatar"
+                app:layout_constraintTop_toBottomOf="@id/tvIssueTitle"
+                tools:text="Good bug reports include a failing test! Writing a test helps you to isolate and describe the problem, and it helps us to fix it fast. Bug reports without a failing test or reproduction steps are likely to be closed.\r\n\r\nHere’s an example test to get you started.\r\nhttps://gist.github.com/swankjesse/981fcae102f513eb13ed\r\n\r\nWe invoke downstream application using host name  which is resolved to an Load Balancer and it is mapped to different IP addresses. \r\n\r\nWhen we invoke Synchronous request using execute() method, then okhttp client is able to identifiy the new active ip address which is attached to the load balancer and gets the response back.\r\n\r\nBut when we invoke Asynchronous request using enqueue() method, then okhttp client is taking the IP address from the cache and goes to the ip address which is not currently attached to load balancer.\r\n\r\nIs there dns caching done in enqueue() which is not done in execute() method and if so, how to resolve the dns caching that is being done in enqueu() method as we need to resolve the DNS for the host and go against the active IP which is attached to the load balancer and not to the inactive ip which would be available in the cache.\r\n\r\n" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvIssueUserName"
+                style="@style/TextViewCommonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`Name : ` +item.userName}"
+                app:layout_constraintEnd_toStartOf="@+id/tvIssueUpdatedAt"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvIssueDescription"
+                tools:text="Name : Abhay Pratap" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvIssueUpdatedAt"
+                style="@style/TextViewCommonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                dateText="@{item.updatedAt}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvIssueUserName"
+                app:layout_constraintTop_toBottomOf="@+id/tvIssueDescription"
+                tools:text="Updated On : 12-02-2021" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

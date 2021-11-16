@@ -12,10 +12,24 @@ object Version {
     const val navArgs = "2.4.0-beta02"
 
 
-    // Test
+    // LocalUnitTest
     const val junit = "4.13.2"
-    const val ext_junit = "1.1.3"
-    const val espresso = "3.4.0"
+    const val hamcrest = "1.3"
+    const val coreTesting = "2.1.0"
+    const val kotlinxCoroutinesTest = "1.5.0"
+    const val robolectric = "4.6.1"
+    const val googleTruth = "1.1.2"
+    const val mockito = "3.12.4"
+
+    //JVMTesting
+    const val testCore = "1.4.1-alpha03"
+    const val testExt = "1.1.3"
+
+
+    //InstrumentedTesting
+    const val espressoVersion = "3.4.0"
+    const val fragmentTesting = "1.4.0-rc01"
+    const val dexmakerMockito = "2.28.1"
 
     //kotlin
     const val kotlin = "1.5.31"
@@ -39,10 +53,23 @@ object Version {
 
     //Retrofit
     const val retrofit = "2.9.0"
+    const val okhttp = "4.9.2"
     const val retrofitCoroutinesAdapter = "0.9.2"
 
     //Moshi
     const val moshi = "1.12.0"
+
+    //timber
+    const val timber = "5.0.1"
+
+    //Gson
+    const val gson = "2.8.9"
+
+    //Glide
+    const val glide = "4.12.0"
+
+    //swipeRefreshLayout
+    const val swipeRefreshLayout = "1.1.0"
 
 
 }

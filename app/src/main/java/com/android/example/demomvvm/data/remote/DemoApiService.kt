@@ -1,30 +1,40 @@
 package com.android.example.demomvvm.data.remote
 
 
+import com.android.example.demomvvm.data.remote.model.IssueContainer
+import com.android.example.demomvvm.data.remote.model.Issues
+import com.android.example.demomvvm.data.remote.model.IssuesComment
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import kotlinx.coroutines.Deferred
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.http.GET
+import retrofit2.http.Path
 
-private const val BASE_URL = "https://www.googleapis.com/civicinfo/v2/"
+private const val BASE_URL = "https://api.github.com/repos/square/okhttp/"
 
 private val moshi = Moshi.Builder()
-    .add(KotlinJsonAdapterFactory())
+    .addLast(KotlinJsonAdapterFactory())
     .build()
 
 private val retrofit = Retrofit.Builder()
+    .baseUrl(BASE_URL)
     .addConverterFactory(MoshiConverterFactory.create(moshi))
     .addCallAdapterFactory(CoroutineCallAdapterFactory())
-    .client(CivicsHttpClient.getClient())
-    .baseUrl(BASE_URL)
     .build()
 
-/**
- *  Documentation for the Google Civics API Service can be found at https://developers.google.com/civic-information/docs/v2
- */
 
-interface DemoApiService
+interface DemoApiService {
+    @GET("issues")
+    suspend fun getIssues(): List<Issues>
+
+    @GET("issues/{comment_id}/comments")
+    suspend fun getIssuesComment(
+        @Path("comment_id") comment_id: String,
+    ): List<IssuesComment>
+}
 
 object DemoApi {
     fun createRetrofitService(): DemoApiService = retrofit.create(DemoApiService::class.java)
