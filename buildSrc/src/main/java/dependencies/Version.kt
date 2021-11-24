@@ -17,18 +17,18 @@ object Version {
     const val hamcrest = "1.3"
     const val coreTesting = "2.1.0"
     const val kotlinxCoroutinesTest = "1.5.0"
-    const val robolectric = "4.6.1"
+    const val robolectric = "4.3.1"
     const val googleTruth = "1.1.2"
-    const val mockito = "3.12.4"
+    const val mockito = "3.6.28"
 
     //JVMTesting
-    const val testCore = "1.4.1-alpha03"
+    const val testCore = "1.4.0"
     const val testExt = "1.1.3"
 
 
     //InstrumentedTesting
-    const val espressoVersion = "3.4.0"
-    const val fragmentTesting = "1.4.0-rc01"
+    const val espressoVersion = "3.2.0"
+    const val fragmentTesting = "1.4.0-alpha08"
     const val dexmakerMockito = "2.28.1"
 
     //kotlin
@@ -71,5 +71,6 @@ object Version {
     //swipeRefreshLayout
     const val swipeRefreshLayout = "1.1.0"
 
-
+    //pagination
+    const val pagination="3.1.0"
 }

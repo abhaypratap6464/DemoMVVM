@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.example.demomvvm">
+    package="com.android.example.demoMvvM">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".core.MyApp"
+        android:name="com.android.example.demoMvvM.core.MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DemoMvvM">
         <activity
-            android:name=".ui.MainActivity"
+            android:name="com.android.example.demoMvvM.ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

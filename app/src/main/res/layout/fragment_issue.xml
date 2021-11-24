@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.android.example.demomvvm.ui.issue.IssueViewModel" />
+            type="com.android.example.demoMvvM.ui.issue.IssueViewModel" />
     </data>
 
 
@@ -15,7 +15,7 @@
         android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=" com.android.example.demomvvm.ui.issue.IssueFragment">
+        tools:context=" com.android.example.demoMvvM.ui.issue.IssueFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -25,9 +25,10 @@
                 android:id="@+id/rvIssue"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:liveData="@{viewModel.issuesList}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/it_issue_list"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

@@ -1,7 +1,6 @@
 package dependencies
 
 import dependencies.Version.espressoVersion
-import dependencies.Version.testCore
 
 /**
  * contains all the dependencies used in application
@@ -31,7 +30,7 @@ object Deps {
     }
 
     object Configs {
-        const val applicationId = "com.android.example.demomvvm"
+        const val applicationId = "com.android.example.demoMvvM"
         const val compileSdkVersion = 31
         const val minSdkVersion = 21
         const val targetSdkVersion = 31
@@ -57,7 +56,8 @@ object Deps {
         const val materialDesign = "com.google.android.material:material:${Version.materialDesign}"
         const val constraintLayout =
             "androidx.constraintlayout:constraintlayout:${Version.constraintLayout}"
-        const val multidex = "com.android.support:multidex:2.0.1"
+        const val multidexSupport = "com.android.support:multidex:2.0.1"
+        const val multidex = "androidx.multidex:multidex:2.0.1"
     }
 
     object Lifecycle {
@@ -144,7 +144,11 @@ object Deps {
         const val fragmentKtx = "androidx.fragment:fragment-ktx:${Version.fragmentTesting}"
         const val dexmakerMockito =
             "com.linkedin.dexmaker:dexmaker-mockito:${Version.dexmakerMockito}"
-        const val testCore="androidx.test:core:${Version.testCore}"
+        const val testCore = "androidx.test:core:${Version.testCore}"
+    }
+
+    object Pagination {
+        const val pagination = "androidx.paging:paging-runtime:${Version.pagination}"
     }
 
 

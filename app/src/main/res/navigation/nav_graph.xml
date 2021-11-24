@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     android:label="nav_graph"
     app:startDestination="@id/issueFragment">
 
     <fragment
         android:id="@+id/issueFragment"
-        android:name="com.android.example.demomvvm.ui.issue.IssueFragment"
+        tools:layout="@layout/fragment_issue"
+        android:name="com.android.example.demoMvvM.ui.issue.IssueFragment"
         android:label="Issue">
         <action
             android:id="@+id/action_issueFragment_to_issueDetailsFragment"
@@ -17,12 +19,13 @@
 
     <fragment
         android:id="@+id/issueDetailsFragment"
-        android:name="com.android.example.demomvvm.ui.issueDetails.IssueDetailsFragment"
+        tools:layout="@layout/fragmnet_issue_detail"
+        android:name="com.android.example.demoMvvM.ui.issueDetails.IssueDetailsFragment"
         android:label="Issue Detail" >
         <argument
             android:name="issueData"
             android:defaultValue="@null"
-            app:argType="com.android.example.demomvvm.ui.issue.adapter.IssueDataItem"
+            app:argType="com.android.example.demoMvvM.data.dto.IssuesDTO"
             app:nullable="true" />
     </fragment>
 
